@@ -1,4 +1,4 @@
-<h1><%= @user.name %>'s Events</h1>
+<h1>All Events</h1>
 
 <% @events.each do |event| %>
   <div>
@@ -6,5 +6,6 @@
     <p>Description: <%= event.description %></p>
     <p>Location: <%= event.location %></p>
     <p>Date: <%= event.date %></p>
+    <p>Event host: <%= User.find(event.user_id).name %>
   </div>
 <% end %>

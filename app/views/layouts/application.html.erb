@@ -12,6 +12,9 @@
   <body>
     <% if cookies[:name] %>
       <%= cookies[:name] %>
+      <%= link_to "My events", @user %>
+      <%= link_to "All events", events_path %>
+      <%= link_to "Create events", new_event_path %>
       <%= link_to "Sign out", new_session_path, method: :delete %>
     <% else %>
       <%= link_to "Sign up", new_user_path %>

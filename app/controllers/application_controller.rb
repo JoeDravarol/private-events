@@ -11,4 +11,11 @@ class ApplicationController < ActionController::Base
   def signed_in?
     !current_user.nil?
   end
+
+  # Confirms a signed-in user
+  def signed_in_user
+    unless signed_in?
+      redirect_to new_session_path
+    end
+  end
 end
