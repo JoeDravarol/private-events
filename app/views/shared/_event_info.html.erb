@@ -1,0 +1,11 @@
+<% object.each do |event| %>
+  <%= link_to event_path(event.id), class: "event" do %>
+    <div>
+      <p>Title: <%= event.title %></p>
+      <p>Description: <%= event.description %></p>
+      <p>Location: <%= event.location %></p>
+      <p>Date: <%= event.date %></p>
+      <p>Event host: <%= User.find(event.user_id).name %></p>
+    </div>
+  <% end %>
+<% end %>

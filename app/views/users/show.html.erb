@@ -1,10 +1,9 @@
-<h1><%= @user.name %>'s Events</h1>
+<div>
+  <h1>Created events</h1>
+  <%= render "shared/event_info", object: @events %>
+</div>
 
-<% @events.each do |event| %>
-  <div>
-    <p>Title: <%= event.title %></p>
-    <p>Description: <%= event.description %></p>
-    <p>Location: <%= event.location %></p>
-    <p>Date: <%= event.date %></p>
-  </div>
-<% end %>
+<div>
+  <h2>Invitations</h2>
+  <%= render "shared/event_info", object: @invitations %>
+</div>

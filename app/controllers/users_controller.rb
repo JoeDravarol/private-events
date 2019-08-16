@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-
+  before_action :signed_in_user, only: [:show]
+  
   def new
     @user = User.new
   end
@@ -14,13 +15,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(id: params[:id])
-
-    if @user
-      @events = @user.events.all
-    else
-      redirect_to root_url
-    end
+    @user = current_user
+    @events = Event.all.where(user_id: @user.id)
+    @invitations = @user.attended_event
   end
 
   private

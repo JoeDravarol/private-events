@@ -1,0 +1,21 @@
+<div>
+<h1>Event's information</h1>
+
+  <p>Title: <%= @event.title %></p>
+  <p>Description: <%= @event.description %></p>
+  <p>Location: <%= @event.location %></p>
+  <p>Date: <%= @event.date %></p>
+  <p>Event host: <%= User.find(@event.user_id).name %></p>
+
+  <%= link_to "Attend event", method: :post, 
+              controller: "attendances",
+              action: :create, event_id: @event.id %>
+</div>
+
+<h2>Event's attendees</h2>
+
+<ul>
+  <% @attendees.each do |attendee| %>
+    <li><%= attendee.name %></li>
+  <% end %>
+</ul>
