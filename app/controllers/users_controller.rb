@@ -17,7 +17,8 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @events = Event.all.where(user_id: @user.id)
-    @invitations = @user.attended_event
+    @upcoming_events = @user.upcoming_events
+    @prev_events = @user.previous_events
   end
 
   private

@@ -4,6 +4,11 @@
 </div>
 
 <div>
-  <h2>Invitations</h2>
-  <%= render "shared/event_info", object: @invitations %>
+  <h2>Upcoming Invitations</h2>
+  <%= render "shared/event_info", object: @upcoming_events %>
+</div>
+
+<div>
+  <h2>Past Invitations</h2>
+  <%= render "shared/event_info", object: @prev_events %>
 </div>
